@@ -1,7 +1,11 @@
 # for문
 
 print("1부터 n까지 정수의 합을 구합니다.")
-n = int(input("n값을 입력하세요.: "))
+
+while True:
+    n = int(input("n값을 입력하세요.: "))
+    if n > 0:
+        break
 
 sum = 0
 
