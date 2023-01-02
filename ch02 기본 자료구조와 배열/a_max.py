@@ -11,6 +11,7 @@ def max_of(a: Sequence) -> Any:
     return maximum
 
 if __name__ == "__main__":
+    # 파이썬에서는 하나의 스크립트 프로그램을 모듈이라고 한다.
     # __name__은 모듈 이름을 나타내는 변수이다.
     # 1. 스크립트 프로그램이 직접 실행될 때 변수 __name__은 "__main__"이다.
     # 2. 스크립트 프로그램이 import될 때 변수 __name__은 원래 모듈 이름이다.
