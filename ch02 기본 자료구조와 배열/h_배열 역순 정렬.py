@@ -22,5 +22,3 @@ if __name__ == "__main__":
     print("배열을 역순으로 정렬했습니다.")
     for i in range(nx):
         print(f"x[{i}] = {x[i]}")
-    
-        
