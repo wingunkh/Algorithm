@@ -1,12 +1,16 @@
 # 선형 검색 알고리즘
-
+"""
+선형 검색의 종료 조건
+1) 검색할 값을 찾지 못하고 배열의 맨 끝을 지나는 경우 
+2) 검색할 값과 같은 원소를 찾은 경우
+"""
 from typing import Any, Sequence
 
 def seq_search(a: Sequence, key: Any) -> int:
     for i in range(len(a)):
         if a[i] == key:
-            return 1 # 검색 성공 (검색할 값과 같은 원소를 찾은 경우)
-    return -1 # 검색 실패 (검색할 값을 찾지 못하고 배열의 맨 끝을 지나간 경우)
+            return 1 # 검색 성공
+    return -1 # 검색 실패
 
 if __name__ == "__main__":
     num = int(input("원소 수를 입력하세요.: "))
