@@ -11,8 +11,9 @@ def seq_search(seq :Sequence, key: Any) -> int:
     i = 0
     while True:
         if a[i] == key:
-            break # 검색에 성공 시 반복문 종료
+            break
         i += 1
+    # 선형 검색은 반복할 때 마다 2가지 종료 조건을 체크하지만 보초법을 사용할 경우 이 비용이 절반으로 감소한다.
         
     return -1 if i == len(seq) else i # 조건 연산자인 if~else 문은 파이썬의 유일한 삼항 연산자이다. 참이면 -1을, 거짓이면 i를 반환한다.
 
