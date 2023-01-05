@@ -7,10 +7,13 @@
 from typing import Any, Sequence
 
 def seq_search(a: Sequence, key: Any) -> int:
-    for i in range(len(a)):
-        if a[i] == key:
-            return 1 # 검색 성공
-    return -1 # 검색 실패
+    i = 0
+    while True:
+        if i == len(a): # 종료 조건1
+            return -1
+        if a[i] == key: # 종료 조건2
+            return i
+        i += 1
 
 if __name__ == "__main__":
     num = int(input("원소 수를 입력하세요.: "))
