@@ -11,13 +11,13 @@ class Node: # 개별 버킷을 나타내는 Node 클래스
         self.next = next # 뒤쪽 노드를 참조
 
 class ChainedHash: # 해시 테이블을 나타내는 ChainedHash 클래스
-    def __init__(self, capcity: int) -> None:
-        self.capacity = capcity # 해시 테이블의 크기를 지정
+    def __init__(self, capacity: int) -> None:
+        self.capacity = capacity # 해시 테이블의 크기를 지정
         self.table = [None] * self.capacity  # 해시 테이블(리스트)을 선언
 
     def hash_value(self, key: Any) -> int: # 해시 함수
         if isinstance(key, int):
-            return key % self.capcity
+            return key % self.capacity
         return(int(hashlib.sha256(str(key).encode()).hexdigest(), 16) % self.capacity)
 
     def search(self, key: Any) -> Any:
