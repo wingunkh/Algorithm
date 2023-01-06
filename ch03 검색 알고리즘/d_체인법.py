@@ -37,7 +37,7 @@ class ChainedHash: # 해시 테이블을 나타내는 ChainedHash 클래스
 
         while p is not None:
             if p.key == key:
-                return false
+                return False
             p = p.next
 
         temp = Node(key, value, self.table[hash])
