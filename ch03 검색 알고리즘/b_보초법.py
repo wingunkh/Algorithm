@@ -1,6 +1,5 @@
 # 보초법
 
-
 from typing import Any, Sequence
 import copy
 
