@@ -10,7 +10,7 @@ class Node: # 개별 버킷을 나타내는 Node 클래스
         self.value = value # 값
         self.next = next # 뒤쪽 노드를 참조
 
-class ChainedHash: # 해시 테이블을 나타내는 ChainedHash 클래스
+class ChainedHash: # 체인법으로 해시 클래스 구현
     def __init__(self, capacity: int) -> None:
         self.capacity = capacity # 해시 테이블의 크기를 지정
         self.table = [None] * self.capacity  # 해시 테이블(리스트)을 선언
