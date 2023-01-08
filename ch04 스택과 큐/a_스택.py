@@ -41,7 +41,9 @@ class FixedStack:
         return self.str[self.ptr - 1]
 
     def clear(self) -> None:
-        self.ptr = 0 # 스택에서 푸시나 팝 등 모든 작업은 스택 포인터를 바탕으로 이루어진다. 따라서 스택의 배열 원솟값을 변경할 필요 없이 ptr의 값을 0으로 변경하면 스택의 모든 데이터를 삭제할 수 있다.
+        self.ptr = 0
+        # 스택에서 푸시나 팝 등 모든 작업은 스택 포인터를 바탕으로 이루어진다.
+        # 따라서 스택의 배열 원솟값을 변경할 필요 없이 ptr의 값을 0으로 변경하면 스택의 모든 데이터를 삭제할 수 있다.
 
     def find(self, value: Any) -> Any:
         for i in range(self.ptr - 1, -1, -1): # top에서부터 선형 검색
