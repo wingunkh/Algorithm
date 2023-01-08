@@ -42,7 +42,7 @@ while True:
 
     elif menu == Menu.검색:
         x = int(input("검색할 데이터를 입력하세요.: "))
-        if x in s: # __contains__() 함수를 정의하였기 때문에 x in obj 작성 가능
+        if x in s: # __contains__() 함수를 정의하였기 때문에 x in obj 작성 가능 (in은 멤버십 판단 연산자)
             print(f"{s.count(x)}개 포함되고, 맨 앞의 위치는 {s.find(x)}입니다.")
         else:
             print("검색값을 찾을 수 없습니다.")
