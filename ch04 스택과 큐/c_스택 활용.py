@@ -1,7 +1,7 @@
-# 고정 길이 스택 클래스(Fixed Stack)를 사용하기
+# 고정 길이 스택 클래스를 사용하기
 
 from enum import Enum
-# from a_스택 import FixedStack
+from a_스택 import FixedStack
 from b_deque스택 import Stack
 
 Menu = Enum("Menu", ["푸시", "팝", "피크", "검색", "덤프", "종료"])
@@ -14,8 +14,8 @@ def select_menu() -> Menu:
         if 1 <= n <= len(Menu): # __len__() 함수를 정의하였기 때문에 len(obj) 작성 가능
             return Menu(n)
 
-# s = FixedStack(64)
-s = Stack()
+s = FixedStack(64)
+# s = Stack()
 
 while True:
     print(f"현재 데이터 개수: {len(s)} / {s.capacity}")
