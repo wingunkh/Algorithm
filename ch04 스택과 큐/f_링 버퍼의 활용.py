@@ -9,7 +9,7 @@ while True:
     cnt += 1
 
     retry = input(f"계속 할까요?(Y ... Yes / N ... No): ")
-    if retry in {'N','n'}:
+    if retry in {'N', 'n'}:
         break
 
 i = cnt - n
