@@ -7,7 +7,7 @@ prime = [None] * 500 # 소수를 저장할 배열
 prime[ptr] = 2 # 2는 소수
 ptr += 1
 
-prime[ptr] = 3 # 3은 소
+prime[ptr] = 3 # 3은 소수
 ptr += 1
 
 for n in range(5, 1001, 2): # 홀수만을 대상으로 선정
