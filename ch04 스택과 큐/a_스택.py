@@ -53,7 +53,7 @@ class FixedStack:
 
     def count(self, value: Any) -> int:
         c = 0
-        for i in range(self.ptr - 1, -1, -1): # top에서부터 선형 검색
+        for i in range(self.ptr):
             if self.stk[i] == value:
                 c += 1
         return c
