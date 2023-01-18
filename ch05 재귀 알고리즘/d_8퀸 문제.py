@@ -14,8 +14,8 @@ def put() -> None: # 각 열에 배치한 퀸의 위치를 출력하는 함수
 
 def set(i: int) -> None: # i열의 알맞은 위치에 퀸을 배치하는 함수
     for j in range(8):
-        if (not flag_a[j] and not flag_b[i+j] and not flag_c[i-j+7]):
-            pos[i] = j
+        if not(flag_a[j] or flag_b[i+j] or flag_c[i-j+7]): # 드모르간의 법칙 적용
+            pos[i] = j # 퀸을 i열의 j행에 배치
             if i == 7:
                 put()
             else:
