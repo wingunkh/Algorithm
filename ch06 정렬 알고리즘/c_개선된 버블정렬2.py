@@ -6,11 +6,11 @@ def bubble_sort(a: MutableSequence) -> None:
     n = len(a)
     k = 0
     while k < n - 1:
-        last = n - 1 # 각 패스에서 마지막으로 교환한 두 원소 가운데 오른쪽 원소인 a[j]의 인덱스를 저장한다.
+        last = n - 1
         for j in range(n-1, k, -1):
             if a[j] < a[j-1]:
                 a[j], a[j-1] = a[j-1], a[j]
-                last = j
+                last = j  # 각 패스에서 마지막으로 교환한 두 원소 가운데 오른쪽 원소인 a[j]의 인덱스를 저장한다.
         k = last # 하나의 패스를 마친 시점에 last의 값을 k에 대입하여 다음에 수행할 패스의 스캔 범위를 a[k]로 제한한다.
 
 if __name__ == "__main__":
