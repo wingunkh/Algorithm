@@ -11,7 +11,7 @@ def bubble_sort(a: MutableSequence) -> None:
 
 if __name__ == "__main__":
     print("버블 정렬을 수행합니다.")
-    num =int(input("원소 수를 입력하세요.: "))
+    num = int(input("원소 수를 입력하세요.: "))
     x = [None] * num
 
     for i in range(num):
