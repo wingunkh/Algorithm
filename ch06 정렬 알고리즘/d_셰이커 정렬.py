@@ -1,5 +1,4 @@
 # 셰이커 정렬 알고리즘 구현하기
-# 1 6 5 3 4 2
 
 from typing import MutableSequence
 
