@@ -8,7 +8,7 @@ def qsort(a: MutableSequence, left: int, right: int) -> None:
     pr = right
     x = a[(left + right) // 2] # 피벗
 
-    print(f"a[{left}] ~ a[{right}]:", *a[left : right + 1])
+    # print(f"a[{left}] ~ a[{right}]:", *a[left : right + 1])
 
     while pl <= pr:
         while a[pl] < x: pl += 1
