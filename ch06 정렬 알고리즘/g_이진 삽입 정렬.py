@@ -21,7 +21,9 @@ def binary_insertion_sort(a: MutableSequence) -> None:
                 break
 
         pd = pc + 1 if pl <= pr else pr + 1 # 삽입해야 할 위치의 인덱스
-
+        # 1) 조건식이 참이라면 key값과 일치하는 값이 존재한다는 의미이므로 pd = pc + 1
+        # 2) 조건식이 거짓이라면 key값과 일치하는 값이 존재하지 않는다는 의미이므로 pd = pr + 1
+        
         for j in range(i, pd, -1):
             a[j] = a[j-1]
         a[pd] = key        
