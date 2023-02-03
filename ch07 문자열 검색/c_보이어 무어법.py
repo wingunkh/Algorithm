@@ -5,9 +5,9 @@ def bm_match(txt: str, pat: str) -> int:
 
     # 건너뛰기 표 만들기
     for pt in range(256):
-        skip[pt] = len(pat)
+        skip[pt] = len(pat) # 패턴에 포함되지 않는 문자를 만난 경우 패턴의 길이만큼 이동시킨다.
     for pt in range(len(pat)):
-        skip[ord(pat[pt])] = len(pat) - pt - 1
+        skip[ord(pat[pt])] = len(pat) - 1 - pt # 패턴에 포함되는 문자를 만난 경우, 패턴의 오른쪽 끝에서부터 그 문자까지의 칸 수를 세서 그만큼 이동시킨다.
 
     # 검색하기
     while pt < len(txt):
@@ -17,8 +17,8 @@ def bm_match(txt: str, pat: str) -> int:
                 return pt
             pt -= 1
             pp -= 1
-        pt += skip[ord(txt[pt])] if skip[ord(txt[pt])] > len(pat) - pp else len(pat) - pp
-
+        pt += skip[ord(txt[pt])] # 패턴 자체가 이동하는 것이 아니라 주목하는 문자의 위치가 이동하는 것이다.
+ 
     return -1
 
 if __name__ == "__main__":
