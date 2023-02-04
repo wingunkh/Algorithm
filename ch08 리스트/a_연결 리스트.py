@@ -1,5 +1,6 @@
 # 포인터로 연결 리스트 구현하기
 
+from __future__ import annotations
 from typing import Any, Type
 
 class Node:
@@ -30,3 +31,18 @@ class LinkedList:
 
     def __contains__(self, data: Any) -> bool:
         return self.search(data) >= 0
+
+    def add_first(self, data: Any) -> None:
+        ptr = self.head # 삽입 전 머리 노드
+        self.head = self.current = Node(data, ptr)
+        self.no += 1
+
+    def add_last(self, data: Any) -> None:
+        if self.head is None:
+            self.add_first(data)
+        else:
+            ptr = self.head
+            while ptr is not None:
+                ptr = ptr.next
+            ptr.next = ptr.current = None(data, None)
+            self.no += 1
