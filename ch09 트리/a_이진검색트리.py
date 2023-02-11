@@ -1,6 +1,6 @@
 # 이진 검색 트리 구현하기
 
-from __future__ import Annotations
+from __future__ import annotations
 from typing import Any, Type
 
 class Node:
@@ -43,7 +43,7 @@ class BinarySearchTree:
             return True
 
         if self.root is None:
-            self.root = None(key, value, None, None)
+            self.root = Node(key, value, None, None)
             return True
         else:
             return add_node(self.root, key, value)
@@ -66,7 +66,7 @@ class BinarySearchTree:
                     p = p.left
                 else:
                     is_left_child = False
-                    p = p.left
+                    p = p.right
 
         if p.left is None: # p에 왼쪽 자식이 없을 때
             if p is self.root:
@@ -83,19 +83,45 @@ class BinarySearchTree:
             else:
                 parent.right = p.left
                 
-        else:
+        else: # p에 양쪽 자식이 모두 있을 때
             parent = p
-            left = p.left
+            big = p.left
             is_left_child = True
-            while left.right is not None:
-                parent = left
-                left = left.right
+            while big.right is not None: # p의 왼쪽 서브트리에서 가장 큰 노드 big을 검색
+                parent = big
+                big = big.right
                 is_left_child = False
 
-            p.key = left.key
-            p.value = left.value
-            if is_left_child:
-                parent.left = left.left
+            p.key = big.key
+            p.value = big.value
+            # 서브트리에서 가장 큰 노드 big을 p의 위치로 복사
+            if is_left_child: # big이 왼쪽 자식일 때
+                parent.left = big.left
             else:
-                parent.right = left.left
+                parent.right = big.left
             return True
+
+    def dump(self) -> None: # DFS 중 중위 순회 방식으로 스캔 후 출력(오름차순)
+        def print_subtree(node: Node):
+            if node is not None:
+                print_subtree(node.left)
+                print(f"{node.key}  {node.value}")
+                print_subtree(node.right)
+
+        print_subtree(self.root)
+
+    def min_key(self) -> Any:
+        if self.root is None:
+            return None
+        p = self.root
+        while p.left is not None:
+            p = p.left
+        return p.key
+    
+    def max_key(self) -> Any:
+        if self.root is None:
+            return None
+        p = self.root
+        while p.right is not None:
+            p = p.right
+        return p.key
