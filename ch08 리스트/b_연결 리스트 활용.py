@@ -22,10 +22,10 @@ while True:
     menu = select_Menu()  # 메뉴 선택
 
     if menu == Menu.머리에노드삽입:
-        lst.add_first(int(input('머리에 넣을 값을 입력하세요.: ')))
+        lst.add_first(int(input("머리에 넣을 값을 입력하세요.: ")))
 
     elif menu == Menu.꼬리에노드삽입:
-        lst.add_last(int(input('꼬리에 넣을 값을 입력하세요.: ')))
+        lst.add_last(int(input("꼬리에 넣을 값을 입력하세요.: ")))
 
     elif menu == Menu.머리노드삭제:
         lst.remove_first()
@@ -46,14 +46,14 @@ while True:
         lst.clear()
 
     elif menu == Menu.검색:
-        pos = lst.search(int(input('검색할 값을 입력하세요.: ')))
+        pos = lst.search(int(input("검색할 값을 입력하세요.: ")))
         if pos >= 0:
-            print(f'그 값의 데이터는 {pos + 1}번째에 있습니다.')
+            print(f"그 값의 데이터는 {pos + 1}번째에 있습니다.")
         else:
-            print('해당 데이터가 없습니다.')
+            print("해당 데이터가 없습니다.")
 
     elif menu == Menu.멤버십판단:
-        print('그 값의 데이터는 포함되어' + (' 있습니다.' if int(input('멤버십 판단할 값을 입력하세요.: ')) in lst else ' 있지 않습니다.'))
+        print("그 값의 데이터는 포함되어" + (" 있습니다." if int(input("멤버십 판단할 값을 입력하세요.: ")) in lst else " 있지 않습니다."))
 
     elif menu == Menu.모든노드출력:
         lst.print()
