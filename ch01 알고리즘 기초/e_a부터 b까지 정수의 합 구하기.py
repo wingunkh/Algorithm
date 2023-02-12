@@ -16,5 +16,3 @@ print(f"{b} = ",end='')
 sum+=b
 
 print(sum)
-
-    
