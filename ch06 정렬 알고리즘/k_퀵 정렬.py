@@ -3,7 +3,6 @@
 from typing import MutableSequence
 
 def qsort(a: MutableSequence, left: int, right: int) -> None:
-    n = len(a)
     pl = left
     pr = right
     x = a[(left + right) // 2] # 피벗
